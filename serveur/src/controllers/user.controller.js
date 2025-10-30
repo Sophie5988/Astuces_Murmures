@@ -50,8 +50,8 @@ const cookieEnv = isProd
   : {
       // 💻 DEV (http://localhost) :
       // secure: false permet le stockage du cookie en HTTP
-      secure: false,
-      sameSite: "Lax",
+      secure: process.env.MODE === "development" ? false : true,
+      sameSite: process.env.MODE === "development" ? "lax" : "None",
     };
 
 const cookieOpts = {

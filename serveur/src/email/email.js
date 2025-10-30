@@ -13,20 +13,20 @@ const {
 } = process.env;
 
 // Transporteur Nodemailer (Gmail)
-// - garde "tls.rejectUnauthorized=false" comme tu l'avais (utile en dev/proxy)
+// - garde "tls.rejectUnauthorized=false"  (utile en dev/proxy)
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
     user: EMAIL_USER,
-    pass: EMAIL_PASS, // ⚠️ mot de passe d’application Gmail (pas ton mdp normal)
+    pass: EMAIL_PASS, // ⚠️ mot de passe d’application Gmail (pas le mdp normal)
   },
   tls: { rejectUnauthorized: false },
 });
 
 console.log(EMAIL_USER);
 
-// Construit l’URL de vérification vers ton backend
-// ✅ on garde EXACTEMENT la route qui marchait chez toi : /user/verifyMail/:token
+// Construit l’URL de vérification vers le backend
+
 function buildVerifyUrl(token) {
   const base = MODE === "development" ? API_URL : DEPLOY_BACK_URL;
   return `${base}/user/verifyMail/${token}`;
