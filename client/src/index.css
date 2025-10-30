@@ -1,0 +1,74 @@
+/* ============================================
+   1) IMPORTS (au tout début)
+   - Google Fonts (Manrope + Playfair) en 1 seul import
+   - Tailwind
+   ============================================ */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+/* ============================================
+   2) Thème global du site (palette perso)
+   ============================================ */
+@theme {
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  /* ✅ FIX : #ffffff (il manquait un “f”) */
+  --color-white: #ffffff;
+
+  --color-purple: #3f3cbb;
+  --color-midnight: #121063;
+  --color-metal: #565584;
+  --color-tahitiLight: #67e8f9;
+  --color-tahitiDefault: #06b6d4;
+  --color-tahitiDark: #0e7490;
+  --color-silver: #ecebff;
+  --color-bubble-gum: #ff77e9;
+  --color-bermuda: #78dcca;
+}
+
+/* ============================================
+   3) Utilitaire : police élégante (au besoin)
+   - À appliquer ponctuellement : class="font-elegant"
+   - Playfair conserve un gras fin et élégant
+   ============================================ */
+.font-elegant {
+  font-family: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman",
+    Times, serif;
+  font-feature-settings: "liga", "kern";
+  text-rendering: optimizeLegibility;
+}
+
+/* ============================================
+   4) Base globale (fond + lissage + police)
+   ============================================ */
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* ✅ Lissage centralisé (évite les doublons) */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ✅ Une seule règle body (fond + police globale Manrope) */
+body {
+  background-color: #f8f5ef;
+  font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI,
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Focus visible accessible et cohérent avec ta palette */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(189, 210, 115, 0.6);
+  border-radius: 10px;
+}
