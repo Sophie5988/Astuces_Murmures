@@ -10,7 +10,7 @@ import Contact from "./pages/Contact/Conctact.jsx";
 import ErrorPage from "./pages/ErrorPage";
 import { rootLoader } from "./loaders/rootLoader";
 import UserNotConnected from "./components/ProtectedRoutes/UserNotConnected";
-import USerConnected from "./components/ProtectedRoutes/USerConnected";
+import UserConnected from "./components/ProtectedRoutes/UserConnected";
 import AdminLogin from "./pages/Admin/AdminLogin";
 
 // ********* PAGES *********
@@ -71,9 +71,9 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: (
-          <USerConnected>
+          <UserConnected>
             <Profile />
-          </USerConnected>
+          </UserConnected>
         ),
       },
 
