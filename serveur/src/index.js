@@ -36,7 +36,7 @@ const devDefaults = ["http://localhost:5173", "http://127.0.0.1:5173"];
 
 // Fusion sans doublons
 const allowedOrigins = Array.from(new Set([...envList, ...devDefaults]));
-
+// ----------------------------------------------------------------------------------
 // Middleware CORS avec fonction de vérification
 app.use(
   cors({
